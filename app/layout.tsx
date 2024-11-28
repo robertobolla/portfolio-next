@@ -6,7 +6,7 @@ import { ReactNode } from "react";
 
 const font = Figtree({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Portfolio Web",
   description: "Portfolio Web",
 };

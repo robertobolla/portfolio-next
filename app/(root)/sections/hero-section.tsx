@@ -20,13 +20,18 @@ const HeroSection = () => {
           <div className="max-w-3xl">
             <h1 className="text-4xl max-w-3xl text-white mb-4">{`Hey, I'am Roberto - I'am Front-End Developer`}</h1>
             <p className="text-gray-500">
-              I am a seasoned product designer with 5 tears of experience
-              specializing in Sass solutions, crafting user-centric experiencies
-              that drive innovation and effiency.
+              Soy un Full Stack Developer con más de 3 años de experiencia,
+              apasionado por construir soluciones digitales robustas, eficientes
+              y escalables. Mi carrera ha abarcado desde el trabajo freelance
+              hasta el desarrollo de proyectos propios, incluyendo la creación
+              de mi propia tienda online, donde vendo plantillas y plugins.
+              También he liderado equipos en mi agencia de marketing y
+              desarrollo web, asegurando que cada proyecto cumpla con altos
+              estándares técnicos y creativos.
             </p>
           </div>
           <div className="flex gap-x-3">
-            {SocialMedia.map((social) => (
+            {SocialMedia.slice(0, 2).map((social) => (
               <ButtonSocialMedia
                 key={social.href}
                 href={social.href}

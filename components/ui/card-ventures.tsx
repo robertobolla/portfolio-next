@@ -1,3 +1,4 @@
+import { cn } from "@/libs/utils";
 import Image from "next/image";
 
 interface CardVenturesProps {
@@ -5,6 +6,7 @@ interface CardVenturesProps {
   image: string;
   description: string;
   href: string;
+  className?: string;
 }
 
 const CardVentures = ({
@@ -12,10 +14,11 @@ const CardVentures = ({
   image,
   description,
   href,
+  className,
 }: CardVenturesProps) => {
   return (
     <a href={href} target="_blank" className="block group">
-      <div className="relative w-14 h-14 rounded-xl mb-5">
+      <div className={cn("relative w-14 h-14 rounded-xl mb-5", className)}>
         <Image
           src={image}
           fill

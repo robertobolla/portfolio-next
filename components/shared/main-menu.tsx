@@ -1,5 +1,6 @@
 import { cn } from "@/libs/utils";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   RiHome3Line,
   RiBriefcase2Line,
@@ -43,6 +44,8 @@ const MainMenu = () => {
     },
   ];
 
+  const pathname = usePathname();
+
   return (
     <ul>
       <li>
@@ -51,7 +54,8 @@ const MainMenu = () => {
             key={route.href}
             href={route.href}
             className={cn(
-              "flex items-center gap-4 text-gray-500 p-5 px-8 border-b border-gray-500/30 hover:text-white hover:bg-gray-500/5 transition-colors duration-300"
+              "flex items-center gap-4 text-gray-500 p-5 px-8 border-b border-gray-500/30 hover:text-white hover:bg-gray-500/5 transition-colors duration-300",
+              pathname === route.href && "text-white"
             )}
           >
             <route.icon size={18} />

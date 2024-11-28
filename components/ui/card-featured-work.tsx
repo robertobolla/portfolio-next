@@ -1,11 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
+import Badge from "./badge";
+import StackMedia from "./stack-media";
+import { IconType } from "react-icons";
 
 interface CardFeaturedWorkProps {
   title: string;
   subtitle: string;
   href: string;
   image: string;
+  TechStack: { icon: IconType; label: string }[];
 }
 
 const CardFeaturedWork = ({
@@ -13,6 +17,7 @@ const CardFeaturedWork = ({
   title,
   subtitle,
   image,
+  TechStack,
 }: CardFeaturedWorkProps) => {
   return (
     <Link href={href} className=" group">
@@ -24,10 +29,15 @@ const CardFeaturedWork = ({
           className="object-cover rounded-xl group-hover:scale-110 transition-all duration-300"
         />
       </div>
-      <h5 className="text-gray-500 uppercase tracking-widest font-medium group-hover:text-primary transition-colors duration-300">
-        {subtitle}
-      </h5>
-      <h3 className="text-xl text-white">{title}</h3>
+      <Badge label={subtitle} />
+      <h3 className="text-xl text-white  group-hover:text-primary transition-colors duration-300">
+        {title}
+      </h3>
+      <div className="flex gap-x-3 mt-4">
+        {TechStack.map((tech, index) => (
+          <StackMedia label={tech.label} key={index} icon={tech.icon} />
+        ))}
+      </div>
     </Link>
   );
 };
